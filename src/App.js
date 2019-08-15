@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { Actions } from './actions';
+import { Route } from "react-router-dom";
+import { TestContainer } from "./containers";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+/**
+ * App Stateless Component
+ *
+ * @param location
+ * @param match
+ */
+const App = ({ location, match, auth, logout }) => {
+    return (
+        <div className="container">
+            <h2>이곳에 라우터를 넣으면 되지 않을까?</h2>
+            <Route path="/test" component={TestContainer} />
+        </div>
+    );
+};
 
-export default App;
+const mapStateToProps = (state) => ({
+    auth: state.auth
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    logout: () => dispatch(Actions.logout())
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
