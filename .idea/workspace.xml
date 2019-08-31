@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9ea08b77-8b13-48b1-b9e2-09fc23019377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/loginTabset.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/loginTabset.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/header_components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/header_components/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/sidebar_components/user-panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/sidebar_components/user-panel.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +76,7 @@
       <updated>1567045888729</updated>
       <workItem from="1567045891309" duration="291000" />
       <workItem from="1567153091125" duration="278000" />
-      <workItem from="1567239758444" duration="7525000" />
+      <workItem from="1567239758444" duration="8951000" />
     </task>
     <servers />
   </component>

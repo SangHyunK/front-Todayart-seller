@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import man from '../../../assets/images/dashboard/man.png'
+import {connect} from "react-redux";
 
 export class User_panel extends Component {
     render() {
@@ -16,5 +17,8 @@ export class User_panel extends Component {
     }
 }
 
-export default User_panel
+const mapStateToProps = (state) => ({
+    auth: state.auth
+});
 
+export default connect(mapStateToProps, null)(User_panel)
