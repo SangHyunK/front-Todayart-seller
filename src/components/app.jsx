@@ -16,7 +16,7 @@ export class App extends Component {
                         <div className="page-body">
                             {this.props.children}
                         </div>
-                            <Footer />
+                        <Footer />
                     </div>
                 </div>
             </div>

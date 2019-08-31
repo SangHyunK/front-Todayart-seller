@@ -14,20 +14,20 @@ import {
     employeeData, 
     employeeOptions 
 } from '../constants/chartData'
+
 // image impoer
 import user2 from '../assets/images/dashboard/user2.jpg';
 import user1 from '../assets/images/dashboard/user1.jpg';
 import man from '../assets/images/dashboard/man.png';
 import user from '../assets/images/dashboard/user.png';
 import designer from '../assets/images/dashboard/designer.jpg'
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+const CanvasJS = CanvasJSReact.CanvasJS;
+const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 
 export class Dashboard extends Component {
 
     render() {
-
         const lineData = {
             labels: ['100', '200', '300', '400', '500', '600', '700', '800'],
             datasets: [

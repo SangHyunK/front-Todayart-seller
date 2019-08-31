@@ -6,10 +6,11 @@ import Slider from 'react-slick';
 import stats from '../../assets/images/dashboard/stats.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./login.css";
 
 export class Login extends Component {
     render() {
-        var settings = {
+        const settings = {
             dots: true,
             infinite: true,
             speed: 500,
@@ -29,20 +30,8 @@ export class Login extends Component {
                                         <Slider className="single-item" {...settings}>
                                             <div>
                                                 <div>
-                                                    <h3>Welcome to Multikart</h3>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <h3>Welcome to Multikart</h3>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <h3>Welcome to Multikart</h3>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                                                    <h3>환영합니다!</h3>
+                                                    <p>이 곳은 오늘의아트 작가들을 위한 페이지 입니다. 자신의 작품관리 및 판매를 편하게 해보세요!</p>
                                                 </div>
                                             </div>
                                         </Slider >
@@ -56,7 +45,6 @@ export class Login extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://react.pixelstrap.com/multikart" target="_blank" className="btn btn-primary back-btn"><ArrowLeft />back</a>
                         </div>
                     </div>
                 </div>

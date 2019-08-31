@@ -24,6 +24,7 @@ import Digital_add_pro from './components/products/digital/digital-add-pro';
 //Sales
 import Orders from './components/sales/orders';
 import Transactions_sales from './components/sales/transactions-sales';
+
 //Coupons
 import ListCoupons from './components/coupons/list-coupons';
 import Create_coupons from './components/coupons/create-coupons';
@@ -46,68 +47,70 @@ import Reports from './components/reports/report';
 import Invoice from './components/invoice';
 import Datatable from './components/common/datatable'
 import Login from './components/auth/login';
-
-
+import {Provider} from "react-redux";
+import store from "./store";
 
 class Root extends Component {
     render() {
         return (
-            <BrowserRouter basename={'/'}>
-                <ScrollContext>
-                    <Switch>
-                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={Login} />
-                        <Route exact path={`${process.env.PUBLIC_URL}/auth/login`} component={Login} />
+            <Provider store={store}>
+                <BrowserRouter basename={'/'}>
+                    <ScrollContext>
+                        <Switch>
+                            <Route exact path={`/`} component={Login} />
+                            <Route exact path={`/auth/login`} component={Login} />
 
-                        <App>
-                            <Route path={`${process.env.PUBLIC_URL}/dashboard`} component={Dashboard} />
-                                
-                            <Route path={`${process.env.PUBLIC_URL}/products/physical/category`} component={Category} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/physical/sub-category`} component={Sub_category} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/physical/product-list`} component={Product_list} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/physical/product-detail`} component={Product_detail} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/physical/add-product`} component={Add_product} />
+                            <App>
+                                <Route path={`/dashboard`} component={Dashboard} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-category`} component={Digital_category} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-sub-category`} component={Digital_sub_category} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-product-list`} component={Digital_pro_list} />
-                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-add-product`} component={Digital_add_pro} />
+                                <Route path={`/products/physical/category`} component={Category} />
+                                <Route path={`/products/physical/sub-category`} component={Sub_category} />
+                                <Route path={`/products/physical/product-list`} component={Product_list} />
+                                <Route path={`/products/physical/product-detail`} component={Product_detail} />
+                                <Route path={`/products/physical/add-product`} component={Add_product} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/sales/orders`} component={Orders} />
-                            <Route path={`${process.env.PUBLIC_URL}/sales/transactions`} component={Transactions_sales} />
+                                <Route path={`/products/digital/digital-category`} component={Digital_category} />
+                                <Route path={`/products/digital/digital-sub-category`} component={Digital_sub_category} />
+                                <Route path={`/products/digital/digital-product-list`} component={Digital_pro_list} />
+                                <Route path={`/products/digital/digital-add-product`} component={Digital_add_pro} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/coupons/list-coupons`} component={ListCoupons} />
-                            <Route path={`${process.env.PUBLIC_URL}/coupons/create-coupons`} component={Create_coupons} />
+                                <Route path={`/sales/orders`} component={Orders} />
+                                <Route path={`/sales/transactions`} component={Transactions_sales} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/pages/list-page`} component={ListPages} />
-                            <Route path={`${process.env.PUBLIC_URL}/pages/create-page`} component={Create_page} />
+                                <Route path={`/coupons/list-coupons`} component={ListCoupons} />
+                                <Route path={`/coupons/create-coupons`} component={Create_coupons} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/media`} component={Media} />
+                                <Route path={`/pages/list-page`} component={ListPages} />
+                                <Route path={`/pages/create-page`} component={Create_page} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/menus/list-menu`} component={List_menu} />
-                            <Route path={`${process.env.PUBLIC_URL}/menus/create-menu`} component={Create_menu} />
+                                <Route path={`/media`} component={Media} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/users/list-user`} component={List_user} />
-                            <Route path={`${process.env.PUBLIC_URL}/users/create-user`} component={Create_user} />
+                                <Route path={`/menus/list-menu`} component={List_menu} />
+                                <Route path={`/menus/create-menu`} component={Create_menu} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/vendors/list_vendors`} component={List_vendors} />
-                            <Route path={`${process.env.PUBLIC_URL}/vendors/create-vendors`} component={Create_vendors} />
+                                <Route path={`/users/list-user`} component={List_user} />
+                                <Route path={`/users/create-user`} component={Create_user} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/localization/transactions`} component={Translations} />
-                            <Route path={`${process.env.PUBLIC_URL}/localization/currency-rates`} component={Rates} />
-                            <Route path={`${process.env.PUBLIC_URL}/localization/taxes`} component={Taxes} />
+                                <Route path={`/vendors/list_vendors`} component={List_vendors} />
+                                <Route path={`/vendors/create-vendors`} component={Create_vendors} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/reports/report`} component={Reports} />
+                                <Route path={`/localization/transactions`} component={Translations} />
+                                <Route path={`/localization/currency-rates`} component={Rates} />
+                                <Route path={`/localization/taxes`} component={Taxes} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/settings/profile`} component={Profile} />
+                                <Route path={`/reports/report`} component={Reports} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/invoice`} component={Invoice} />
+                                <Route path={`/settings/profile`} component={Profile} />
 
-                            <Route path={`${process.env.PUBLIC_URL}/data-table`} component={Datatable} />
+                                <Route path={`/invoice`} component={Invoice} />
 
-                        </App>
-                    </Switch>
-                </ScrollContext>
-            </BrowserRouter>
+                                <Route path={`/data-table`} component={Datatable} />
+
+                            </App>
+                        </Switch>
+                    </ScrollContext>
+                </BrowserRouter>
+            </Provider>
         )
     }
 }
