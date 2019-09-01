@@ -17,7 +17,7 @@ export const MENUITEMS = [
         path: '/dashboard', title: 'Dashboard', icon: Home, type: 'link', badgeType: 'primary', active: false
     },
     {
-        title: 'Products', icon: Box, type: 'sub', active: false, children: [
+        title: '상품', icon: Box, type: 'sub', active: false, children: [
             {
                 title: 'Physical', type: 'sub', active: false, children: [
                     { path: '/products/physical/category', title: 'Category', type: 'link' },
@@ -35,6 +35,8 @@ export const MENUITEMS = [
                     { path: '/products/digital/digital-add-product', title: 'Add Product', type: 'link' },
                 ]
             },
+            { path: '/products/digital/digital-product-list', title: '상품 목록', type: 'link' },
+            { path: '/products/digital/digital-add-product', title: '상품 추가', type: 'link' },
         ]
     },
     {

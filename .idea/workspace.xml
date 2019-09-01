@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9ea08b77-8b13-48b1-b9e2-09fc23019377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/header_components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/header_components/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/sidebar_components/user-panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/sidebar_components/user-panel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/data/pro_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/pro_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/breadcrumb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/datatable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/products/digital/digital-add-pro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/products/product-add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/products/digital/digital-pro-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/products/product-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/products/digital" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,9 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\finalProject\front-today-art\front-Todayart-seller\src\components\products" />
       <recent name="C:\dev\finalProject\front-today-art\front-today-art-seller\src\containers\member" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\finalProject\front-today-art\front-Todayart-seller\src\components\products\digital" />
       <recent name="C:\dev\finalProject\front-today-art\front-Todayart-seller" />
       <recent name="C:\dev\finalProject\front-today-art\front-Todayart-seller\src" />
       <recent name="C:\dev\finalProject\front-today-art\front-today-art-seller\src" />
@@ -76,7 +83,8 @@
       <updated>1567045888729</updated>
       <workItem from="1567045891309" duration="291000" />
       <workItem from="1567153091125" duration="278000" />
-      <workItem from="1567239758444" duration="8951000" />
+      <workItem from="1567239758444" duration="11053000" />
+      <workItem from="1567310695792" duration="112000" />
     </task>
     <servers />
   </component>

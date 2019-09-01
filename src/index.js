@@ -8,6 +8,10 @@ import { ScrollContext } from 'react-router-scroll-4';
 // Components
 import Dashboard from './components/dashboard';
 
+// Customizing
+import ProductAdd from './components/products/product-add';
+import ProductList from './components/products/product-list';
+
 // Products physical
 import Category from './components/products/physical/category';
 import Sub_category from './components/products/physical/sub-category';
@@ -18,8 +22,8 @@ import Product_detail from './components/products/physical/product-detail';
 //Product Digital
 import Digital_category from './components/products/digital/digital-category';
 import Digital_sub_category from './components/products/digital/digital-sub-category';
-import Digital_pro_list from './components/products/digital/digital-pro-list';
-import Digital_add_pro from './components/products/digital/digital-add-pro';
+import Digital_pro_list from './components/products/product-list';
+import Digital_add_pro from './components/products/product-add';
 
 //Sales
 import Orders from './components/sales/orders';
@@ -62,6 +66,10 @@ class Root extends Component {
 
                             <App>
                                 <Route path={`/dashboard`} component={Dashboard} />
+
+                                {/* 상품 */}
+                                <Route path={`/products/digital-product-list`} component={ProductList} />
+                                <Route path={`/products/digital-add-product`} component={ProductAdd} />
 
                                 <Route path={`/products/physical/category`} component={Category} />
                                 <Route path={`/products/physical/sub-category`} component={Sub_category} />

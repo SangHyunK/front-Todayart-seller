@@ -2,6 +2,8 @@ import React, { Component,Fragment } from 'react'
 import {Link} from 'react-router-dom'
 //images import
 import man from '../../../assets/images/dashboard/man.png'
+import {Actions} from "../../../actions";
+import {connect} from "react-redux";
 export class User_menu extends Component {
     render() {
         return (
@@ -12,11 +14,8 @@ export class User_menu extends Component {
                             <div className="dotted-animation"><span className="animate-circle"></span><span className="main-circle"></span></div>
                         </div>
                         <ul className="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
-                            <li><Link to={`${process.env.PUBLIC_URL}/settings/profile`} ><i data-feather="user"></i>Edit Profile</Link></li>
-                            <li><a href="javascript:void(0)"><i data-feather="mail"></i>Inbox</a></li>
-                            <li><a href="javascript:void(0)"><i data-feather="lock"></i>Lock Screen</a></li>
-                            <li><a href="javascript:void(0)"><i data-feather="settings"></i>Settings</a></li>
-                            <li><Link to={`${process.env.PUBLIC_URL}/`}><i data-feather="log-out"></i>Logout</Link></li>
+                            <li><Link to={`/settings/profile`} ><i data-feather="user" />프로필 관리</Link></li>
+                            <li><Link to={`/auth/login`} onClick={this.props.logout}><i data-feather="log-out" />로그아웃</Link></li>
                         </ul>
                     </li>
             </Fragment>
@@ -24,4 +23,8 @@ export class User_menu extends Component {
     }
 }
 
-export default User_menu
+const mapDispatchToProps = (dispatch) => ({
+    logout: () => dispatch(Actions.logout())
+});
+
+export default connect(null, mapDispatchToProps)(User_menu)

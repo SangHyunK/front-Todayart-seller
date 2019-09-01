@@ -3,7 +3,7 @@ import Breadcrumb from '../common/breadcrumb';
 import CKEditors from "react-ckeditor-component";
 import MyDropzone from '../common/dropzone'
 
-export class Digital_add_pro extends Component {
+export class ProductAdd extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -123,4 +123,4 @@ export class Digital_add_pro extends Component {
     }
 }
 
-export default Digital_add_pro
+export default ProductAdd

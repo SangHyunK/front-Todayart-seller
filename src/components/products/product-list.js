@@ -3,21 +3,21 @@ import Breadcrumb from '../common/breadcrumb';
 import data from '../../assets/data/pro_list';
 import Datatable from '../common/datatable'
 
-export class Digital_pro_list extends Component {
+export class ProductList extends Component {
     render() {
         return (
             <Fragment>
-                <Breadcrumb title="Product List" parent="Digital" />
+                <Breadcrumb title="상품 목록" parent="상품" />
                 {/* <!-- Container-fluid starts--> */}
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h5>Product Lists</h5>
+                                    <h5>상품 목록</h5>
                                 </div>
                                 <div className="card-body">
-                                    <div className="clearfix"></div>
+                                    <div className="clearfix" />
                                     <div id="basicScenario" className="product-physical">
                                         <Datatable
                                             multiSelectOption={false}
@@ -38,4 +38,4 @@ export class Digital_pro_list extends Component {
     }
 }
 
-export default Digital_pro_list
+export default ProductList
