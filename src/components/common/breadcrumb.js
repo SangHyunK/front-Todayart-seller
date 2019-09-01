@@ -11,9 +11,7 @@ export class Breadcrumb extends Component {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="page-header-left">
-                                    <h3>{this.props.title}
-                                    <small>Multikart Admin panel</small>
-                                    </h3>
+                                    <h3>{this.props.title}</h3>
                                 </div>
                             </div>
                             <div className="col-lg-6">

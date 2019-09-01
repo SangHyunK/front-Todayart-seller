@@ -18,7 +18,7 @@ const data = [
         quantity: "5",
        
     },
-      {
+    {
         id:172,
         image: <img src={design} style={{width:50,height:50}} />,
         product_title: "3D Design",

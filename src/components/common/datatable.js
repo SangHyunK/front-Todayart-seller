@@ -141,11 +141,10 @@ export class Datatable extends Component {
                                 toast.success("Successfully Deleted !")
 
                             }}>
-                                <i className="fa fa-trash" style={{ width: 35, fontSize: 20, padding: 11, color: '#e4566e' }}
-                                ></i>
+                                <i className="fa fa-trash" style={{ width: 35, fontSize: 20, padding: 11, color: '#e4566e' }} />
                             </span>
 
-                        <span><i className="fa fa-pencil" style={{ width: 35, fontSize: 20, padding: 11,color:'rgb(40, 167, 69)' }}></i></span>
+                        <span><i className="fa fa-pencil" style={{ width: 35, fontSize: 20, padding: 11,color:'rgb(40, 167, 69)' }} /></span>
                     </div>
                 ),
                 style: {
