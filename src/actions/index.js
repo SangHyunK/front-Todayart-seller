@@ -68,10 +68,29 @@ const refreshToken = (refresh_token) => {
     });
 };
 
+
+const addProduct = (product) => {
+    return ({
+        type: ActionTypes.ADD_PRODUCT,
+        payload: {
+            request : {
+                method: 'POST',
+                url: '',
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    'Accept': 'application/json'
+                },
+                data: JSON.stringify({product})
+            }
+        }
+    })
+}
+
 export const Actions = {
     getClientToken,
     login,
     logout,
     getMemberMe,
     refreshToken,
+    addProduct,
 };

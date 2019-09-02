@@ -35,11 +35,10 @@ export class ProductAdd extends Component {
                                             <label className="col-form-label"><span>*</span> Categories</label>
                                             <select className="custom-select" required="">
                                                 <option value="">--Select--</option>
-                                                <option value="1">eBooks</option>
-                                                <option value="2">Graphic Design</option>
-                                                <option value="3">3D Impact</option>
-                                                <option value="4">Application</option>
-                                                <option value="5">Websites</option>
+                                                <option value="1">서양화</option>
+                                                <option value="2">동양화</option>
+                                                <option value="3">기타</option>
+                                               
                                             </select>
                                         </div>
                                         <div className="form-group">
