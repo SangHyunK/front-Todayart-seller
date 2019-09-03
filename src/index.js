@@ -68,7 +68,7 @@ class Root extends Component {
                                 <Route path={`/dashboard`} component={Dashboard} />
 
                                 {/* 상품 */}
-                                <Route path={`/products/digital-product-list`} component={ProductList} />
+                                <Route path={`/products/product-list`} component={ProductList} />
                                 <Route path={`/products/digital-add-product`} component={ProductAdd} />
 
                                 <Route path={`/products/physical/category`} component={Category} />

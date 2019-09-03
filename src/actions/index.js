@@ -69,22 +69,58 @@ const refreshToken = (refresh_token) => {
 };
 
 
-const addProduct = (product) => {
+const addProduct = ({productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId}) => {
+    // const formData = new FormData();
+    // formData.append("productName", productName)
+    // formData.append("productContent", productContent)
+    // formData.append("categoryId", categoryId)
+    // formData.append("productSize", productSize)
+    // formData.append("productPrice", productPrice)
+    // formData.append("sheepingFee", sheepingFee)
+    // formData.append("remain", remain)
+    // formData.append("fileId", fileId)
+    console.log('shippingFee',shippingFee)
+
     return ({
         type: ActionTypes.ADD_PRODUCT,
         payload: {
             request : {
                 method: 'POST',
-                url: '',
+                url: '/product',
                 headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json; charset=UTF-8'                    
                 },
-                data: JSON.stringify({product})
+                data: JSON.stringify({productName, productContent, productCategory:{categoryId}, productSize, productPrice, shippingFee, remain, thumbnail:{fileId}})
+                // data: formData
             }
         }
     })
 }
+
+
+//파일 업로드하기
+
+const UpdateFiles = (files) => {
+    console.log('file', files)
+    let formData = new FormData();
+    files.map((file, index) => 
+      formData.append('file', file));
+    
+    // formData.append('files', files[0]);
+      return ({
+        type: ActionTypes.UPDATE_FILES,
+        payload: {
+          request: {
+            method: 'POST',
+            url: `/storage/file`,
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            },
+            data: formData
+          }
+        }
+      })
+    }
 
 export const Actions = {
     getClientToken,
@@ -93,4 +129,5 @@ export const Actions = {
     getMemberMe,
     refreshToken,
     addProduct,
+    UpdateFiles
 };
