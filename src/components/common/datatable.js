@@ -86,9 +86,29 @@ export class Datatable extends Component {
             if (key === "vendor") {
                 editable = null;
             }
+            if(key === "totalPrice"){
+                editable = null;
+            }
+            if(key === "productPrice"){
+                editable = null;
+            }
+
+            if(key === "shipping"){
+                editable = null;
+            }
+            if(key === "date"){
+                editable = null;
+            }
+            if(key === "paymentMethod"){
+                editable = null;
+            }
             if(key === "orderStatus"){
                 editable = null;
             }
+
+
+
+
 
             columns.push(
                 {
