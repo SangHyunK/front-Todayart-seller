@@ -41,9 +41,9 @@ export const MENUITEMS = [
         ]
     },
     {
-        title: 'Sales', icon: DollarSign, type: 'sub', active: false, children: [
-            { path: '/sales/orders', title: 'Orders', type: 'link' },
-            { path: '/sales/transactions', title: 'Transactions', type: 'link' },
+        title: '주문관리', icon: DollarSign, type: 'sub', active: false, children: [
+            { path: '/sales/orders', title: '주문', type: 'link' },
+            { path: '/sales/transactions', title: '결제상황', type: 'link' },
         ]
     },
     {

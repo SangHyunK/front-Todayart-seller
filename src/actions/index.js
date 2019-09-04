@@ -92,13 +92,22 @@ const addProduct = ({productName, productContent, categoryId, productSize, produ
                 },
                 data: JSON.stringify({productName, productContent, productCategory:{categoryId}, productSize, productPrice, shippingFee, remain, thumbnail:{fileId}})
                 // data: formData
+}
+        }})}
+
+const getOrders = () =>{
+    return({
+        type: ActionTypes.GET_ORDERS,
+        payload:{
+            request:{
+                method: 'GET',
+                url: '/orders/artist'
             }
         }
     })
 }
 
 
-//파일 업로드하기
 
 const UpdateFiles = (files) => {
     console.log('file', files)
@@ -190,5 +199,6 @@ export const Actions = {
     fetchArtwork,
     updateProduct,
     deleteProduct,
-    fetchByArtist
+    fetchByArtist,
+    getOrders,
 };

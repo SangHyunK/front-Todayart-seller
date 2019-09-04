@@ -37,7 +37,7 @@ export class Datatable extends Component {
         this.setState({
             myData: updatedData
         })
-        toast.success("Successfully Deleted !")
+        toast.success("해당 내역이 삭제되었습니다!")
     };
 
     componentDidMount(){
@@ -77,7 +77,7 @@ export class Datatable extends Component {
             if (key === "image") {
                 editable = null;
             }
-            if (key === "status") {
+            if (key === "orderStatus") {
                 editable = null;
             }
             if (key === "avtar") {
@@ -144,7 +144,7 @@ export class Datatable extends Component {
                                     data.splice(row.index, 1);
                                     this.setState({ myData: data });
                                 }
-                                toast.success("Successfully Deleted !")
+                                toast.success("해당 내역이 삭제되었습니다!")
 
                             }}>
                                 <i className="fa fa-trash" style={{ width: 35, fontSize: 20, padding: 11, color: '#e4566e' }} />
