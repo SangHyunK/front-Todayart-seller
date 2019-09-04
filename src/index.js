@@ -11,6 +11,7 @@ import Dashboard from './components/dashboard';
 // Customizing
 import ProductAdd from './components/products/product-add';
 import ProductList from './components/products/product-list';
+import ProductUpdate from './components/products/product-update';
 
 // Products physical
 import Category from './components/products/physical/category';
@@ -22,7 +23,7 @@ import Product_detail from './components/products/physical/product-detail';
 //Product Digital
 import Digital_category from './components/products/digital/digital-category';
 import Digital_sub_category from './components/products/digital/digital-sub-category';
-import Digital_pro_list from './components/products/product-list';
+import Digital_pro_list from './components/products/digital/digital-pro-list';
 import Digital_add_pro from './components/products/product-add';
 
 //Sales
@@ -69,7 +70,8 @@ class Root extends Component {
 
                                 {/* 상품 */}
                                 <Route path={`/products/product-list`} component={ProductList} />
-                                <Route path={`/products/digital-add-product`} component={ProductAdd} />
+                                <Route path={`/products/add-product`} component={ProductAdd} />
+                                <Route path={`/products/product-update/:id`} component={ProductUpdate} />
 
                                 <Route path={`/products/physical/category`} component={Category} />
                                 <Route path={`/products/physical/sub-category`} component={Sub_category} />

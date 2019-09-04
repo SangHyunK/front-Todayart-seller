@@ -122,6 +122,63 @@ const UpdateFiles = (files) => {
       })
     }
 
+    const fetchArtwork = () => {
+        return ({
+            type: ActionTypes.FETCH_ARTWORK,
+            payload: {
+                request: {
+                    method: 'GET',
+                    url: `/product`
+                }
+            }
+    
+        })
+    }
+
+    const fetchByArtist = () => {
+        return ({
+            type: ActionTypes.FETCH_BYARTIST,
+            payload: {
+                request: {
+                    method: 'GET',
+                    url: `/product/artistId`
+                }
+            }
+    
+        })
+    }
+
+    const updateProduct = ({productId ,productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId}) => {
+        return ({
+            type: ActionTypes.UPDATE_PRODUCT,
+            payload: {
+                request: {
+                    method: 'PATCH',
+                    url: `/product/${productId}`,
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8'                    
+                    },                
+                    data: JSON.stringify({productName, productContent, productCategory:{categoryId}, productSize, productPrice, shippingFee, remain, thumbnail:{fileId}})
+                    // data: formData
+                }
+            }
+            
+        })
+    }
+
+
+    const deleteProduct  =(productId) =>{
+        return({
+            type:ActionTypes.DELETE_PRODUCT,
+            payload:{
+                request:{
+                    method: 'DELETE',
+                    url: `/product/${productId}`
+                }
+            }
+        })
+    }
+
 export const Actions = {
     getClientToken,
     login,
@@ -129,5 +186,9 @@ export const Actions = {
     getMemberMe,
     refreshToken,
     addProduct,
-    UpdateFiles
+    UpdateFiles,
+    fetchArtwork,
+    updateProduct,
+    deleteProduct,
+    fetchByArtist
 };

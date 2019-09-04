@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import Breadcrumb from '../common/breadcrumb';
-import data from '../../assets/data/pro_list';
-import Datatable from '../common/datatable'
+import Breadcrumb from '../../common/breadcrumb';
+import data from '../../../assets/data/pro_list';
+import Datatable from '../../common/datatable'
 
 export class Digital_pro_list extends Component {
     render() {

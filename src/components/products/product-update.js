@@ -25,11 +25,12 @@ export class ProductAdd extends Component {
         this.shippingFeeInput = React.createRef();
         this.stockInput = React.createRef();
 
-        this.state = {
-           
-            files: []
+        this.state = {           
+            files: [],
+            item : this.props.location.state
         }
 
+        
 
 
     }
@@ -82,25 +83,27 @@ export class ProductAdd extends Component {
         e.preventDefault();        
         let target = document.getElementById("selectBox");
 
+        const { item } = this.state.item;
         //alert('선택된 옵션 value 값=' + target.options[target.selectedIndex].value);     // 옵션 value 값
         
 
+        const productId = item.productId;
         const productName = this.titleInput.current.value;
         const productContent = this.contentInput.current.value;
-        const categoryId = target.options[target.selectedIndex].value;
+        const categoryId = item.productCategory.categoryId?item.productCategory.categoryId:target.options[target.selectedIndex].value;
         const productSize = this.sizeInput.current.value;
         const productPrice = this.priceInput.current.value;
         const shippingFee = this.shippingFeeInput.current.value;
         const remain = this.stockInput.current.value;
-        const fileId = this.props.items.fileId;
+        const fileId = item.thumbnail.fileId?item.thumbnail.fileId:this.props.items.fileId;
 
-        this.props.addProduct({productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId})
+        this.props.updateProduct({productId,productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId})
           .then(response => {          
-              console.log('실행 후 ::::',productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId)
+              console.log('실행 후 ::::',productId, productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId)
 
-            if(response.type==ActionTypes.ADD_PRODUCT_SUCCESS){
+            if(response.type==ActionTypes.UPDATE_PRODUCT_SUCCESS){
                 this.props.history.push("/products/product-list")  
-                console.log('상품등록성공!')  
+                console.log('상품수정성공!')  
         } 
 
           })
@@ -117,15 +120,17 @@ export class ProductAdd extends Component {
 
         console.log('files', this.state.files);
 
-        e.preventDefault();
-
-        this.props.UpdateFiles(this.state.files).then(response => {
+            this.props.UpdateFiles(this.state.files).then(response => {
             console.log('file response>>', response)
         });        
 
         
       };
     render() {
+
+        const { item } = this.state.item;
+
+        console.log('item....', item)
         return (
             <Fragment>
                 <Breadcrumb title="Add Products" parent="Digital" />
@@ -150,6 +155,7 @@ export class ProductAdd extends Component {
                                                     id="title"
                                                     name="title"
                                                     ref={this.titleInput}
+                                                    defaultValue ={item.productName}
                                                     required="" />
                                                 <label className="col-form-label pt-0"> </label>
                                             </div>
@@ -159,7 +165,7 @@ export class ProductAdd extends Component {
                                                     type="text"
                                                     name="size"
                                                     ref={this.sizeInput}
-                                                    placeholder="100x100 형식으로 기재"
+                                                    defaultValue ={item.productSize}
                                                     required="" />
                                                 <label className="col-form-label pt-0"> </label>
                                             </div>
@@ -181,6 +187,7 @@ export class ProductAdd extends Component {
                                                     type="text"
                                                     name="price"
                                                     ref={this.priceInput}
+                                                    defaultValue ={item.productPrice}
                                                     required="" />
                                                 <label className="col-form-label pt-0"> </label>
                                             </div>
@@ -190,6 +197,7 @@ export class ProductAdd extends Component {
                                                     type="text"
                                                     name="shippingFee"
                                                     ref={this.shippingFeeInput}
+                                                    defaultValue ={item.shippingFee}
                                                     required="" />
                                                 <label className="col-form-label pt-0"> </label>
                                             </div>
@@ -198,6 +206,7 @@ export class ProductAdd extends Component {
                                                 <input className="form-control" id="validationCustom02" type="text"
                                                     name="stock"
                                                     ref={this.stockInput}
+                                                    defaultValue ={item.remain}
                                                     required="" />
                                                 <label className="col-form-label pt-0"> </label>
                                             </div>
@@ -223,6 +232,7 @@ export class ProductAdd extends Component {
                                             <textarea rows="15" cols="12"
                                             type="text"
                                             name="content"
+                                            defaultValue ={item.productContent}
                                             ref={this.contentInput}></textarea>
                                             <div className="form-group">                                        
                                            
@@ -284,9 +294,11 @@ const mapStateToProps = (state) => ({
     items: state.fileReducer.files
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    addProduct: ({productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId}) => dispatch(Actions.addProduct({productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId})),
-    UpdateFiles: (files) => dispatch(Actions.UpdateFiles(files))
+const mapDispatchToProps = (dispatch) => ({    
+    UpdateFiles: (files) => dispatch(Actions.UpdateFiles(files)),
+    updateProduct: ({productId, productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId}) => dispatch(Actions.updateProduct({productId, productName, productContent, categoryId, productSize, productPrice, shippingFee, remain, fileId})),
+
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductAdd)

@@ -35,8 +35,9 @@ export const MENUITEMS = [
                     { path: '/products/digital/digital-add-product', title: 'Add Product', type: 'link' },
                 ]
             },
-            { path: '/products/digital/digital-product-list', title: '상품 목록', type: 'link' },
-            { path: '/products/digital/digital-add-product', title: '상품 추가', type: 'link' },
+            { path: '/products/product-list', title: '상품 목록', type: 'link' },
+            { path: '/products/add-product', title: '상품 추가', type: 'link' },
+           
         ]
     },
     {

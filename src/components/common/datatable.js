@@ -3,6 +3,8 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Actions } from '../../actions'
+import { connect } from 'react-redux'
 
 
 export class Datatable extends Component {
@@ -37,6 +39,10 @@ export class Datatable extends Component {
         })
         toast.success("Successfully Deleted !")
     };
+
+    componentDidMount(){
+        this.props.fetchArtwork();
+    }
 
     renderEditable = (cellInfo) => {
         return (
@@ -170,4 +176,21 @@ export class Datatable extends Component {
     }
 }
 
-export default Datatable
+
+
+const mapStateToProps = (state) => ({  
+    symbol: state.product.symbol,
+    items : state.product.items
+})
+
+const mapDispatchToProps = (dispatch) => ({
+   
+    fetchArtwork:() => dispatch(Actions.fetchArtwork()),
+    
+   
+
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Datatable)
+
