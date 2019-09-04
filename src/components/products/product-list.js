@@ -65,7 +65,7 @@ export class Product_list extends Component {
             this.props.deleteProduct(productId)
                 .then(response=>{
                 if(response.type==ActionTypes.DELETE_PRODUCT_SUCCESS){
-                    toast.console.warn("상품이 삭제되었습니다");                        
+                    toast.error('상품이 삭제되었습니다')                     
                     console.log('삭제 성공!')  
                 } 
             }).catch(error=>{
