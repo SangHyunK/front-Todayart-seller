@@ -3,18 +3,18 @@ import Breadcrumb from '../common/breadcrumb';
 import data from '../../assets/data/sales-transactions';
 import Datatable from '../common/datatable';
 
-export class Transactions_sales extends Component {
+export class Shipping extends Component {
     render() {
         return (
             <Fragment>
-                <Breadcrumb title="Transactions" parent="Sales" />
+                <Breadcrumb title="배송관리" parent="Sales" />
 
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-sm-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h5>Transaction Details</h5>
+                                    <h5>배송현황</h5>
                                 </div>
                                 <div className="card-body">
                                     <div id="batchDelete" className="transactions">
@@ -36,4 +36,4 @@ export class Transactions_sales extends Component {
     }
 }
 
-export default Transactions_sales
+export default Shipping

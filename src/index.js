@@ -28,7 +28,7 @@ import Digital_add_pro from './components/products/product-add';
 
 //Sales
 import Orders from './components/sales/orders';
-import Transactions_sales from './components/sales/transactions-sales';
+import Shipping from './components/sales/shipping';
 
 //Coupons
 import ListCoupons from './components/coupons/list-coupons';
@@ -85,7 +85,7 @@ class Root extends Component {
                                 <Route path={`/products/digital/digital-add-product`} component={Digital_add_pro} />
 
                                 <Route path={`/sales/orders`} component={Orders} />
-                                <Route path={`/sales/transactions`} component={Transactions_sales} />
+                                <Route path={`/sales/shipping`} component={Shipping} />
 
                                 <Route path={`/coupons/list-coupons`} component={ListCoupons} />
                                 <Route path={`/coupons/create-coupons`} component={Create_coupons} />

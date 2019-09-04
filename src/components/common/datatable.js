@@ -77,7 +77,7 @@ export class Datatable extends Component {
             if (key === "image") {
                 editable = null;
             }
-            if (key === "orderStatus") {
+            if (key === "status") {
                 editable = null;
             }
             if (key === "avtar") {
@@ -86,7 +86,7 @@ export class Datatable extends Component {
             if (key === "vendor") {
                 editable = null;
             }
-            if(key === "order_status"){
+            if(key === "orderStatus"){
                 editable = null;
             }
 
