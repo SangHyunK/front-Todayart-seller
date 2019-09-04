@@ -68,10 +68,23 @@ const refreshToken = (refresh_token) => {
     });
 };
 
+const getOrders = () =>{
+    return({
+        type: ActionTypes.GET_ORDERS,
+        payload:{
+            request:{
+                method: 'GET',
+                url: '/orders/artist'
+            }
+        }
+    })
+}
+
 export const Actions = {
     getClientToken,
     login,
     logout,
     getMemberMe,
     refreshToken,
+    getOrders,
 };

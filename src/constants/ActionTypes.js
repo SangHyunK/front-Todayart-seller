@@ -16,6 +16,10 @@ export const ActionTypes = {
     GET_USER: 'GET_USER',
     GET_USER_FAIL: 'GET_USER_FAIL',
     GET_USER_SUCCESS: 'GET_USER_SUCCESS',
+
+    GET_ORDERS:'GET_ORDERS',
+    GET_ORDERS_FAIL:'GET_ORDERS_FAIL',
+    GET_ORDERS_SUCCESS:'GET_ORDERS_SUCCESS',
 };
 
 export const Errors = {
