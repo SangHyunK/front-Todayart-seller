@@ -16,6 +16,13 @@ const loginAsync = (email, password) => (dispatch) => {
                 return Promise.reject(response);
             }
         })
+        .then(response=>{
+            if(response.type===ActionTypes.GET_USER_SUCCESS){
+                return dispatch(Actions.getInfoAboutOrder())
+            } else{
+                return Promise.reject(response);
+            }
+        })
 };
 
 

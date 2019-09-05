@@ -1,9 +1,18 @@
 import React, { Component, Fragment } from 'react'
+import {connect} from 'react-redux'
 import Breadcrumb from '../common/breadcrumb';
 import data from '../../assets/data/sales-transactions';
 import Datatable from '../common/datatable';
 
+
 export class Shipping extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            shipping:props.shipping
+        }
+        
+    }
     render() {
         return (
             <Fragment>
@@ -18,13 +27,15 @@ export class Shipping extends Component {
                                 </div>
                                 <div className="card-body">
                                     <div id="batchDelete" className="transactions">
+                                    {this.state.shipping!==null&&this.state.shipping!==undefined?
                                         <Datatable
                                             multiSelectOption={false}
-                                            myData={data}
+                                            myData={this.state.shipping}
                                             pageSize={10}
                                             pagination={true}
                                             class="-striped -highlight"
-                                        />
+                                        />:
+                                        "로딩중입니다..."}
                                     </div>
                                 </div>
                             </div>
@@ -35,5 +46,8 @@ export class Shipping extends Component {
         )
     }
 }
+const mapStateToProps=(state)=>({
+    shipping:state.seller.shipping
+})
 
-export default Shipping
+export default connect(mapStateToProps,null)(Shipping)
