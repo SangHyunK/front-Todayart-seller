@@ -21,6 +21,10 @@ import user1 from '../assets/images/dashboard/user1.jpg';
 import man from '../assets/images/dashboard/man.png';
 import user from '../assets/images/dashboard/user.png';
 import designer from '../assets/images/dashboard/designer.jpg'
+import { connect } from 'react-redux';
+
+
+
 const CanvasJS = CanvasJSReact.CanvasJS;
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -171,8 +175,8 @@ export class Dashboard extends Component {
                                         <div className="icons-widgets col-4">
                                             <div className="align-self-center text-center"><Navigation className="font-warning" /></div>
                                         </div>
-                                        <div className="media-body col-8"><span className="m-0">Earnings</span>
-                                            <h3 className="mb-0">$ <CountUp className="counter" end={6659} /><small> This Month</small></h3>
+                                        <div className="media-body col-8"><span className="m-0">이달의 판매액</span>
+                                            <h3 className="mb-0">￦ <CountUp className="counter" end={this.props.info.reduce((sum, item)=>{return item.productPrice+sum},0)} /></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -185,8 +189,8 @@ export class Dashboard extends Component {
                                         <div className="icons-widgets col-4">
                                             <div className="align-self-center text-center"><Box className="font-secondary" /></div>
                                         </div>
-                                        <div className="media-body col-8"><span className="m-0">Products</span>
-                                            <h3 className="mb-0">$ <CountUp className="counter" end={9856} /><small> This Month</small></h3>
+                                        <div className="media-body col-8"><span className="m-0">이달의 주문건수</span>
+                                            <h3 className="mb-0"><CountUp className="counter" end={this.props.info.length} /> <small>건</small></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -199,8 +203,8 @@ export class Dashboard extends Component {
                                         <div className="icons-widgets col-4">
                                             <div className="align-self-center text-center"><MessageSquare className="font-primary" /></div>
                                         </div>
-                                        <div className="media-body col-8"><span className="m-0">Messages</span>
-                                            <h3 className="mb-0">$ <CountUp className="counter" end={893} /><small> This Month</small></h3>
+                                        <div className="media-body col-8"><span className="m-0">인출가능금액</span>
+                                            <h3 className="mb-0">￦ <CountUp className="counter" end={this.props.info.reduce((sum, item)=>{return item.productPrice+sum},0)*0.85} /></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -213,8 +217,8 @@ export class Dashboard extends Component {
                                         <div className="icons-widgets col-4">
                                             <div className="align-self-center text-center"><Users className="font-danger" /></div>
                                         </div>
-                                        <div className="media-body col-8"><span className="m-0">New Vendors</span>
-                                            <h3 className="mb-0">$ <CountUp className="counter" end={45631} /><small> This Month</small></h3>
+                                        <div className="media-body col-8"><span className="m-0">배송대기중 상품</span>
+                                            <h3 className="mb-0"><CountUp className="counter" end={this.props.shipping.filter(item=>item.status==='결제완료'||item.status==='배송준비').length} /><small> 건</small></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -847,4 +851,9 @@ export class Dashboard extends Component {
 }
 // javascript:void(0)
 
-export default Dashboard
+const mapStateToProps=(state)=>({
+    info:state.seller.info,
+    shipping:state.seller.shipping
+})
+
+export default connect(mapStateToProps,null)(Dashboard)

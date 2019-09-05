@@ -27,6 +27,12 @@ class StateLoader {
         token: null,
         userDetails: null,
         isLogin:false
+      },
+      seller:{
+        sales:null,
+        salesDetail:null,
+        shipping:null,
+        shippingDetail:null
       }
     };
   }

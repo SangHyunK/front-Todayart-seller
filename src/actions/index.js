@@ -188,6 +188,18 @@ const UpdateFiles = (files) => {
         })
     }
 
+    const getInfoAboutOrder=()=>{
+        return({
+            type:ActionTypes.GET_INFO_ORDER,
+            payload:{
+                request:{
+                    method:'GET',
+                    url:"/artists/info"
+                }
+            }
+        })
+    }
+
 export const Actions = {
     getClientToken,
     login,
@@ -201,4 +213,5 @@ export const Actions = {
     deleteProduct,
     fetchByArtist,
     getOrders,
+    getInfoAboutOrder,
 };

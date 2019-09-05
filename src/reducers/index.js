@@ -4,11 +4,13 @@ import { combineReducers } from 'redux';
 import authentication from "./authentication.reducer";
 import product from "./product";
 import fileReducer from "./file"
+import seller from "./seller"
 
 const rootReducer = combineReducers({
     auth: authentication,
     product : product,
-    fileReducer : fileReducer
+    fileReducer : fileReducer,
+    seller:seller
 });
 
 export default rootReducer;

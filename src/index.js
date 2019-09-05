@@ -29,6 +29,7 @@ import Digital_add_pro from './components/products/product-add';
 //Sales
 import Orders from './components/sales/orders';
 import Shipping from './components/sales/shipping';
+import OrderDetail from './components/sales/orderDetail';
 
 //Coupons
 import ListCoupons from './components/coupons/list-coupons';
@@ -86,6 +87,7 @@ class Root extends Component {
 
                                 <Route path={`/sales/orders`} component={Orders} />
                                 <Route path={`/sales/shipping`} component={Shipping} />
+                                <Route path={`/sales/:id`} component={OrderDetail}/>
 
                                 <Route path={`/coupons/list-coupons`} component={ListCoupons} />
                                 <Route path={`/coupons/create-coupons`} component={Create_coupons} />

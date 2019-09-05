@@ -1,31 +1,20 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Actions } from '../../actions'
-import { connect } from 'react-redux'
+
 
 
 export class Datatable extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            checkedValues: [],
+            orderDetail:null,
+            open:false,
             myData: this.props.myData
-        }
-    }
-
-    selectRow = (e, i) => {
-        if (!e.target.checked) {
-            this.setState({
-                checkedValues: this.state.checkedValues.filter((item, j) => i !== item)
-            });
-        } else {
-            this.state.checkedValues.push(i);
-            this.setState({
-                checkedValues: this.state.checkedValues
-            })
         }
     }
 
@@ -39,10 +28,6 @@ export class Datatable extends Component {
         })
         toast.success("해당 내역이 삭제되었습니다!")
     };
-
-    componentDidMount(){
-        this.props.fetchArtwork();
-    }
 
     renderEditable = (cellInfo) => {
         return (
@@ -64,6 +49,11 @@ export class Datatable extends Component {
 
     Capitalize(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+
+    shouldComponentUpdate(nextProp, nextState){
+        return true;
     }
 
     render() {
@@ -98,9 +88,8 @@ export class Datatable extends Component {
             if(key==="totalPrice"){
                 editable = null;
             }
-            if(key==="orderer"){
-                editable = null
-
+            if(key==="detailId"){
+                editable = null;
             }
 
 
@@ -118,57 +107,21 @@ export class Datatable extends Component {
                 });
         }
 
-        if (multiSelectOption == true) {
             columns.push(
                 {
-                    Header: <button className="btn btn-danger btn-sm btn-delete mb-0 b-r-4"
-                        onClick={
-                            (e) => {
-                                if (window.confirm('Are you sure you wish to delete this item?'))
-                                    this.handleRemoveRow()
-                            }}>Delete</button>,
-                    id: 'delete',
-                    accessor: str => "delete",
+                    Header: <b>상세보기</b>,
+                    id: 'detail',
                     sortable: false,
-                    style: {
-                        textAlign: 'center'
-                    },
+                    accessor: str => "detail",
                     Cell: (row) => (
-                        <div>
-                            <span >
-                                <input type="checkbox" name={row.original.id} defaultChecked={this.state.checkedValues.includes(row.original.id)}
-                                    onChange={e => this.selectRow(e, row.original.id)} />
-                            </span>
-                        </div>
-                    ),
-                    accessor: key,
-                    style: {
-                        textAlign: 'center'
-                    }
-                }
-            )
-        } else {
-            columns.push(
-                {
-                    Header: <b>Action</b>,
-                    id: 'delete',
-                    accessor: str => "delete",
-                    Cell: (row) => (
-                        <div>
-                            <span onClick={() => {
-                                if (window.confirm('Are you sure you wish to delete this item?')) {
-                                    let data = myData;
-                                    data.splice(row.index, 1);
-                                    this.setState({ myData: data });
-                                }
-                                toast.success("해당 내역이 삭제되었습니다!")
-
-                            }}>
-                                <i className="fa fa-trash" style={{ width: 35, fontSize: 20, padding: 11, color: '#e4566e' }} />
-                            </span>
-
-                        <span><i className="fa fa-pencil" style={{ width: 35, fontSize: 20, padding: 11,color:'rgb(40, 167, 69)' }} /></span>
-                    </div>
+                            // <Link to={{
+                            // pathname:`${process.env.PUBLIC_URL}/sales/${row.original.detailId}`,
+                            // state:{
+                            // id:row.original.detailId}}}>
+                            <button className="btn btn-primary" type="button" style={{"padding":"3px 10px 3px 10px"}}>
+                            보기
+                            </button>
+                            // </Link>
                 ),
                 style: {
                     textAlign: 'center'
@@ -176,8 +129,8 @@ export class Datatable extends Component {
                 sortable: false
             }
         )
-        }
-
+        
+            const {open} = this.state;
         return (
             <Fragment>
                 <ReactTable
@@ -187,7 +140,6 @@ export class Datatable extends Component {
                     className={myClass}
                     showPagination={pagination}
                 />
-                <ToastContainer />
             </Fragment>
         )
     }
@@ -197,16 +149,10 @@ export class Datatable extends Component {
 
 const mapStateToProps = (state) => ({  
     symbol: state.product.symbol,
-    items : state.product.items
+    info : state.seller.info
 })
 
-const mapDispatchToProps = (dispatch) => ({
-   
-    fetchArtwork:() => dispatch(Actions.fetchArtwork()),
-    
-   
-
-
+const mapDispatchToProps = (dispatch) => ({    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Datatable)

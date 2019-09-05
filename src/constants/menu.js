@@ -42,7 +42,7 @@ export const MENUITEMS = [
     },
     {
         title: '주문관리', icon: DollarSign, type: 'sub', active: false, children: [
-            { path: '/sales/orders', title: '주문', type: 'link' },
+            { path: '/sales/orders', title: '판매내역', type: 'link' },
             { path: '/sales/shipping', title: '배송관리', type: 'link' },
         ]
     },
